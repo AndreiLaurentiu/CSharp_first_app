@@ -4,110 +4,10 @@ using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
-    class Constructie
-    {
-        private double suprafata;
-        private string strada;
-        private int numar;
-        private double euroPerMetruPatrat;
-
-        public Constructie(double suprafata, string strada, int numar, double euroPerMetruPatrat)
-        {
-            this.suprafata = suprafata;
-            this.strada = strada;
-            this.numar = numar;
-            this.euroPerMetruPatrat = euroPerMetruPatrat;
-        }
-
-        ~Constructie()
-        {
-            
-        }
-
-        public double resultatulCalculat()
-        {
-            return suprafata * euroPerMetruPatrat;
-        }
-
-        public virtual string tipCladire()
-        {
-            return "Constructie";
-        }
-
-        public override string ToString()
-        {
-            return "Strada: " + strada + "\n" +
-                    "Numarul: " + numar + "\n" +
-                    "Costul suprafetei: " + resultatulCalculat() + "\n" +
-                    "Tipul cladirii: " + tipCladire() + "\n";
-        }
-
-    }
-
-    class Casa : Constructie
-    {
-        private int numarDeLocatari;
-        private int numarCamere;
-
-        public Casa(double suprafata, string strada, int numar, double euroPerMetruPatrat, int numarDeLocatari, int numarCamere) : 
-            base(suprafata, strada, numar, euroPerMetruPatrat)
-        {
-            this.numarDeLocatari = numarDeLocatari;
-            this.numarCamere = numarCamere;
-        }
-
-        ~Casa()
-        {
-
-        }
-
-        public override string tipCladire()
-        {
-            return "Casa";
-        }
-
-        public override string ToString()
-        {
-            return base.ToString() + "Numar de locatari: " + numarDeLocatari + "\n" +
-                "Numar de camere: " + numarCamere;
-        }
-
-    }
-
-    class CladireBirou : Constructie
-    {
-        private string firma;
-        private int numarDeAngajati;
-
-        public CladireBirou(double suprafata, string strada, int numar, double euroPerMetruPatrat, string firma, int numarDeAngajati) :
-            base(suprafata, strada, numar, euroPerMetruPatrat)
-        {
-            this.firma = firma;
-            this.numarDeAngajati = numarDeAngajati;
-        }
-
-        ~CladireBirou()
-        {
-
-        }
-
-        public override string tipCladire()
-        {
-           return "CladireBirou";
-        }
-
-        public override string ToString()
-        {
-            return base.ToString() + "Nume firma: " + firma + "\n" +
-                "Numar de angajati: " + numarDeAngajati;
-        }
-
-
-    }
 
     public class Program
     {
-
+        //Functia pt ex 1
         static string StringInversat(string text)
         {
             try
@@ -126,6 +26,8 @@ namespace ConsoleApp1
             return text;
         }
 
+
+        //Enum si functie pt ex2
         enum OperationType
         {
             Par = 0,
