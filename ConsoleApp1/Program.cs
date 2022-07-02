@@ -27,7 +27,7 @@ namespace ConsoleApp1
         }
 
 
-        //Enum si functie pt ex2
+
         enum OperationType
         {
             Par = 0,
@@ -37,21 +37,17 @@ namespace ConsoleApp1
         static List<int> ExtrageLista(List<int> listaNumere, OperationType operatie)
         {
             List<int> listaFiltrata = new List<int>();
-            if (operatie == 0) 
-            {             
-                foreach (int numar in listaNumere)
-                    if (numar % 2 == 0)
-                        listaFiltrata.Add(numar);
-
-            }
-            else
-            {
-                foreach (int numar in listaNumere)
-                    if (numar % 2 == 1)
-                        listaFiltrata.Add(numar);
-            }
-
+            foreach (int numar in listaNumere)
+                if (operatie == OperationType.Par & numar % 2 == 0)
+                {
+                    listaFiltrata.Add(numar);
+                }
+                else if(operatie == OperationType.Impar & numar % 2 == 1)
+                {
+                    listaFiltrata.Add(numar);
+                }
             return listaFiltrata;
+                
         }
                 
 
@@ -72,7 +68,7 @@ namespace ConsoleApp1
             Console.WriteLine("\n");
 
             //Test problema 3
-            List<Constructie> listaConstructii = new List<Constructie>(5);
+            List<Constructie> listaConstructii = new List<Constructie>();
             listaConstructii.Add(new CladireBirou(30.45, "Ialomita", 13, 25.5, "CEVA SRL", 12));
             listaConstructii.Add(new CladireBirou(100.25, "Campului", 24, 30.76, "Maricica", 25));
             listaConstructii.Add(new CladireBirou(120.14, "Giurgiului", 37, 24.89, "Altceva", 24));
